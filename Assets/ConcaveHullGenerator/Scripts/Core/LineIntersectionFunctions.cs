@@ -11,7 +11,8 @@ namespace Assets.src
     {
         // The main function that returns true if line segment 'p1q1' 
         // and 'p2q2' intersect. 
-        public static Boolean doIntersect(Node p1, Node q1, Node p2, Node q2) {
+        public static Boolean doIntersect(Node p1, Node q1, Node p2, Node q2)
+        {
             // Find the four orientations needed for general and 
             // special cases 
             int o1 = orientation(p1, q1, p2);
@@ -41,7 +42,8 @@ namespace Assets.src
 
         // Given three colinear points p, q, r, the function checks if 
         // point q lies on line segment 'pr' 
-        private static bool onSegment(Node p, Node q, Node r) {
+        private static bool onSegment(Node p, Node q, Node r)
+        {
             if (q.x <= Math.Max(p.x, r.x) && q.x >= Math.Min(p.x, r.x) &&
                 q.y <= Math.Max(p.y, r.y) && q.y >= Math.Min(p.y, r.y))
                 return true;
@@ -54,11 +56,12 @@ namespace Assets.src
         // 0 --> p, q and r are colinear 
         // 1 --> Clockwise 
         // 2 --> Counterclockwise 
-        private static int orientation(Node p, Node q, Node r) {
+        private static int orientation(Node p, Node q, Node r)
+        {
             // See https://www.geeksforgeeks.org/orientation-3-ordered-points/ 
             // for details of below formula. 
             double val = (q.y - p.y) * (r.x - q.x) -
-                    (q.x - p.x) * (r.y - q.y);
+                         (q.x - p.x) * (r.y - q.y);
 
             if (val == 0) return 0; // colinear 
 
